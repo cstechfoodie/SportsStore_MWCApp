@@ -9,13 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vic.SportsStore.Domain", "V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vic.SportsStore.UnitTests", "Vic.SportsStore.UnitTests\Vic.SportsStore.UnitTests.csproj", "{02B022A5-19FE-4A82-AF19-DFA5DF3F132E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenShotDemo", "ScreenShotDemo", "{204E740B-AD59-4248-9EE0-76279AD523D6}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.14.29.png = ..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.14.29.png
-		..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.15.06.png = ..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.15.06.png
-		..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.15.42.png = ..\..\..\Dropbox\屏幕截图\Screenshot 2018-01-07 00.15.42.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
