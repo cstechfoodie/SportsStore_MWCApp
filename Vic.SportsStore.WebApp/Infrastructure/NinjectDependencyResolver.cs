@@ -37,6 +37,7 @@ namespace Vic.SportsStore.WebApp.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IProductRepository>().To<EFProductRepository>();
+            kernel.Bind<ICustomerRepository>().To<EFCustomerRepository>();
 
             EmailSettings emailSettings = new EmailSettings //after creating email
             {
@@ -47,6 +48,8 @@ namespace Vic.SportsStore.WebApp.Infrastructure
 
             
             kernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
+
+            
         }
     }
 }
