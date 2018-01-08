@@ -3,12 +3,12 @@ A Simple E-commerce Sports Store
 
 Needs to Connect to Database and map the object in each table to each object in Domain.Entities
 
-Fuctions:
-  Viewing and refining products;
-  Adding and deleting products to shopping carts;
-  Checking out shopping carts by filling personal information;
-  Sending confirmation emails;
-  Login to admin to manage database;
+1. Fuctions:
+  - Viewing and refining products;
+  - Adding and deleting products to shopping carts;
+  - Checking out shopping carts by filling personal information;
+  - Sending confirmation emails;
+  - Login to admin to manage database;
   
  Features:
   Adjusting view based on different widths or devices;
