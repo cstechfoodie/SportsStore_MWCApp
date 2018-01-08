@@ -18,7 +18,7 @@ Needs to Connect to Database and map the object in each table to each object in 
   - Employing Bootstrap and JQuery to improve the user experience;
   
 3. Functions **IS BEING ADDED**:
-  - [ ] Customer login with customer personalized view;
-  - [ ] A improved homepage that is attractive;
-  - [ ] A view for each product that gives more information;
+  - [ ] Customer login with customer personalized view; :smiley:
+  - [ ] A improved homepage that is attractive; :smiley:
+  - [ ] A view for each product that gives more information; :smiley:
    
