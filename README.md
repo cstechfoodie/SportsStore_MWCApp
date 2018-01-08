@@ -1,6 +1,8 @@
 # SportsStore_MWCApp
 A Simple E-commerce Sports Store
-
+```
+**Disclaimer: This project is following and extending existing tutorial**
+```
 Needs to Connect to Database and map the object in each table to each object in Domain.Entities
 
 1. Fuctions:
@@ -15,7 +17,7 @@ Needs to Connect to Database and map the object in each table to each object in 
   - Error message preventing invalid input to achieve form control;
   - Employing Bootstrap and JQuery to improve the user experience;
   
-3. Functions IS BEING ADDED:
+3. Functions **IS BEING ADDED**:
   - Customer login with customer personalized view;
   - A view for each product that gives more information;
   - A improved homepage that is attractive;
