@@ -17,7 +17,8 @@ namespace Vic.SportsStore.WebApp.Controllers
         }
         public ViewResult Login()
         {
-            return View();
+          
+                return View();
         }
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)

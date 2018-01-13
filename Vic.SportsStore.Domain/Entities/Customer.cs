@@ -16,10 +16,8 @@ namespace Vic.SportsStore.Domain.Entities
 
         public string LastName { get; set; }
 
-        [StringLength(9)]
         public string Cell { get; set; }
 
-        [EmailAddress(ErrorMessage = "The email format is not valid")]
         public string Email { get; set; }
 
         public string Password { get; set; }

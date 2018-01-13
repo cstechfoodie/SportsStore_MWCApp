@@ -13,5 +13,39 @@ namespace Vic.SportsStore.Domain.Concrete
         {
             get { return context.Customers; }
         }
+
+        public void SaveCustomer(Customer customer)
+        {
+            if (customer.CustomerId == 0)
+            {
+                context.Customers.Add(customer);
+            }
+            else
+            {
+                Customer dbEntry = context.Customers.Find(customer.CustomerId);
+                if (dbEntry != null)
+                {
+                    dbEntry.FirstName = customer.FirstName;
+                    dbEntry.LastName = customer.LastName;
+                    dbEntry.Email = customer.Email;
+                    dbEntry.Password = customer.Password;
+                    dbEntry.Cell = customer.Cell;
+
+                }
+            }
+            context.SaveChanges();  //update database automatically
+
+        }
+
+        public Customer DeleteCustomer(int customerId)
+        {
+            Customer dbEntry = context.Customers.Find(customerId);
+            if (dbEntry != null)
+            {
+                context.Customers.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

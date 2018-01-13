@@ -1,0 +1,60 @@
+﻿@model Vic.SportsStore.WebApp.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Customer Register";
+}
+
+<h2>Register</h2>
+
+<div class="form-horizontal">
+    <div class="panel-heading">
+        <h5>Please enter your information to register</h5>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Register", "Customer"))
+        {
+            @Html.ValidationSummary();
+            <div class="form-group">
+                <label class="control-label col-sm-2">First Name:</label>
+                <div class=" col-sm-10">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Last Name:</label>
+                <div class=" col-sm-10">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">@Html.TextBoxFor(x => x.Email, new { @class = "form-control", type = "email" })</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <div class=" col-sm-10">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "pwd1" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Comfirm Password:</label>
+                <div class=" col-sm-10">
+                    @Html.PasswordFor(x => x.ComfirmPassword, new { @class = "form-control", id="pwd2" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Cell:</label>
+                <div class=" col-sm-10">
+                    @Html.TextBoxFor(x => x.Cell, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <label><input type="submit" class="btn btn-primary" /></label>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

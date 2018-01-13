@@ -12,6 +12,7 @@ namespace Vic.SportsStore.WebApp.Models
         public string Email { get; set; }
 
         [Required]
+        [RegularExpression(@"\d{6,10}", ErrorMessage = "Password must be between 6 and 10 digits")]
         public string Pwd { get; set; }
     }
 }
