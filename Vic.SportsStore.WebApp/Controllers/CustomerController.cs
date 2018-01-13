@@ -34,10 +34,11 @@ namespace Vic.SportsStore.WebApp.Controllers
                 IEnumerable<Customer> check = repo.Customers;
                 //string a1 = check.First().Password;
                 //string b1 = check.First().Email;
-                Customer customer = repo.Customers.FirstOrDefault(m => m.Password == pwd);
+                Customer customer = repo.Customers.FirstOrDefault(m => m.Email == email);
                 if (customer != null)
                 {
-                    TempData["email"] = email;
+                    Session["customerId"] = customer.CustomerId;
+                    Session["name"] = customer.FirstName;
                     return RedirectToAction("List", "Product");
                 }
                 else
