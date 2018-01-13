@@ -7,10 +7,11 @@ Needs to Connect to Database and map the object in each table to each object in 
 
 1. Fuctions:
   - Viewing and refining products;
-  - Adding and deleting products to shopping carts;
-  - Checking out shopping carts by filling personal information;
+  - Adding and deleting products to/from shopping carts;
+  - Checking out shopping carts by filling shipping information;
   - Sending confirmation emails;
   - Login to admin to manage database;
+  - Customer login and registration;
   
 2. Features:
   - Adjusting view based on different widths or devices;
@@ -18,7 +19,7 @@ Needs to Connect to Database and map the object in each table to each object in 
   - Employing Bootstrap and JQuery to improve the user experience;
   
 3. Functions **IS BEING ADDED**:
-  - [ ] Customer login with customer personalized view; :smiley:
-  - [ ] A improved homepage that is attractive; :smiley:
+  - [ ] An textbox for advice that use ajax to count remaining words :smiley:
+  - [ ] An improved homepage that is attractive; :smiley:
   - [ ] A view for each product that gives more information; :smiley:
    
