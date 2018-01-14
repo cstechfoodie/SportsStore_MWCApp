@@ -26,5 +26,10 @@ namespace Vic.SportsStore.WebApp.Controllers
             .OrderBy(x => x);
             return PartialView("FlexMenu", categories);
         }
+
+        public ActionResult List()
+        {
+            return RedirectToAction("List", "Product");
+        }
     }
 }

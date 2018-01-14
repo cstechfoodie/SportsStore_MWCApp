@@ -21,6 +21,7 @@ namespace Vic.SportsStore.WebApp.Controllers
         [HttpGet]
         public ViewResult LogIn()
         {
+            
             return View();
         }
 
@@ -31,10 +32,7 @@ namespace Vic.SportsStore.WebApp.Controllers
             {
                 string email = model.Email.Trim();
                 string pwd = model.Pwd.Trim();
-                IEnumerable<Customer> check = repo.Customers;
-                //string a1 = check.First().Password;
-                //string b1 = check.First().Email;
-                Customer customer = repo.Customers.FirstOrDefault(m => m.Email == email);
+                Customer customer = repo.Customers.FirstOrDefault(m => m.Email == email && m.Password.Trim() == pwd);
                 if (customer != null)
                 {
                     Session["customerId"] = customer.CustomerId;
@@ -92,6 +90,23 @@ namespace Vic.SportsStore.WebApp.Controllers
                 return View();
             }
 
+        }
+
+        public ActionResult Logout()
+        {
+            Session["name"] = null;
+            Session["Cart"] = null;
+            return RedirectToAction("List","Product");
+        }
+
+        public ActionResult Myprofile()
+        {
+            Customer customer = repo.Customers.FirstOrDefault(x => x.CustomerId == (int)Session["CustomerId"]);
+            if(customer != null)
+            {
+                return View(customer);
+            }
+            return RedirectToAction("LogIn", "Customer");
         }
 
     }

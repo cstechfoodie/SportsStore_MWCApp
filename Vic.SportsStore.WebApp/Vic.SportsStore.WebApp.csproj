@@ -191,6 +191,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Customer\LogIn.cshtml" />
     <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\Myprofile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

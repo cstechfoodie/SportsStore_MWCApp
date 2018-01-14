@@ -1,0 +1,45 @@
+﻿@model Vic.SportsStore.Domain.Entities.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse " role="navigation">
+        <a class="navbar-brand" href="@Url.Action("List", "Product")">
+            <span class="hidden-xs">SPORTS STORE</span>
+            <div class="visible-xs">SPORTS</div>
+            <div class="visible-xs">STORE</div>
+        </a>
+        <div class="navbar-btn col-sm-offset-11">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    @Session["name"]<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href=@Url.Action("Myprofile","Customer")>My Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href=@Url.Action("Logout","Customer")>Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1>This site is being built</h1>
+</body>
+</html>

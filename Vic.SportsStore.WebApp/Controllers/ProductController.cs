@@ -19,6 +19,11 @@ namespace Vic.SportsStore.WebApp.Controllers
             this.repository = productRepository;
         }
 
+        public ViewResult Start()
+        {
+            return View();
+        }
+
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel

@@ -11,6 +11,10 @@ namespace Vic.SportsStore.WebApp
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
+            routes.MapMvcAttributeRoutes();
+            routes.RouteExistingFiles = true;
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -33,7 +37,7 @@ namespace Vic.SportsStore.WebApp
             );
 
             routes.MapRoute(
-                null,
+                "homepage",
                 "{category}",
                 new { controller = "Product", action = "List", page = 1 }
             );

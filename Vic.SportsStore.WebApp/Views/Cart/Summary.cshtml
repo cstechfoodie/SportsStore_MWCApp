@@ -1,30 +1,61 @@
 ﻿@model Vic.SportsStore.Domain.Entities.Cart
+
 <div class="navbar-right hidden-xs">
-    @Html.ActionLink("Checkout", "Index", "Cart",
-new { returnUrl = Request.Url.PathAndQuery },
-new { @class = "btn btn-default navbar-btn" })
+@Html.ActionLink("Checkout", "Index", "Cart", new { returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-default navbar-btn", type = "button" })
     @{
-        if(Session["name"] != null)
+        if (Session["name"] != null)
         {
-            @*<div class="navbar-text navbar-right">Welcome, @Session["name"]</div>*@
             string name = (string)Session["name"];
-            @Html.ActionLink(name, "LogIn", "Customer", null, new { @class = "btn btn-default navbar-btn" });
+            
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    @name<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href=@Url.Action("Myprofile","Customer")>My Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href=@Url.Action("Logout","Customer")>Log out</a></li>
+                </ul>
+            </div>
+
         }
         else
         {
-            @Html.ActionLink("Log In", "LogIn", "Customer", null, new { @class = "btn btn-default navbar-btn" });
+                @Html.ActionLink("Log In", "LogIn", "Customer", null, new { @class = "btn btn-default navbar-btn" });
         }
     }
 
-    @*@Html.ActionLink("Log In", "LogIn", "Customer", null, new { @class = "btn btn-default navbar-btn" });*@
-    
+
 </div>
-<div class="navbar-right visible-xs">
+
+<div class="nav navbar-nav navbar-right visible-xs">
     <a href=@Url.Action("Index", "Cart", new { returnUrl = Request.Url.PathAndQuery })
        class="btn btn-default navbar-btn">
         <span class="glyphicon glyphicon-shopping-cart"></span>
     </a>
-    <a href=@Url.Action("LogIn", "Customer") class="btn btn-default navbar-btn"> <span class="glyphicon glyphicon-log-in"></span> </a>
+    @{
+        if (Session["name"] != null)
+        {
+            string name = (string)Session["name"];
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href=@Url.Action("Myprofile","Customer")>My Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href=@Url.Action("Logout","Customer")>Log out</a></li>
+                </ul>
+            </div>
+
+        }
+        else
+        {
+            <a href=@Url.Action("LogIn", "Customer") class="btn btn-default navbar-btn"> <span class="glyphicon glyphicon-log-in"></span> </a>
+        }
+    }
+
 </div>
 <div class="navbar-text navbar-right">
     <b class="hidden-xs">Your cart:</b>
