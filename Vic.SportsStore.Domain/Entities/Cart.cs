@@ -35,6 +35,17 @@ namespace Vic.SportsStore.Domain.Entities
             lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
         }
 
+        public void UpdateCart(Product product, int newQuantity)
+        {
+            CartLine line = lineCollection
+                .Where(p => p.Product.ProductID == product.ProductID)
+                .FirstOrDefault();
+            if(line != null)
+            {
+                line.Quantity = newQuantity;
+            }
+        }
+
         public decimal ComputeTotalValue()
         {
             return lineCollection.Sum(e => e.Product.Price * e.Quantity);

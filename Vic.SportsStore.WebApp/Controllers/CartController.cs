@@ -52,6 +52,22 @@ namespace Vic.SportsStore.WebApp.Controllers
         }
 
 
+        public RedirectToRouteResult UpdateCart(Cart cart, int productId, int quantity)
+        {
+            Product product = repository.Products
+            .FirstOrDefault(p => p.ProductID == productId);
+            if(quantity <= 0)
+            {
+                cart.RemoveLine(product);
+            }
+            if (product != null)
+            {
+                cart.UpdateCart(product, quantity);
+            }
+            return RedirectToAction("Index", "Cart");
+        }
+
+
         public PartialViewResult Summary(Cart cart)
         {
             return PartialView(cart);

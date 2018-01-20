@@ -2,12 +2,14 @@
 @{
     ViewBag.Title = "Sports Store: Your Cart";
 }
+
 <style>
     #cartTable td {
         vertical-align: middle;
     }
 </style>
 <h2>Your cart</h2>
+
 <table id="cartTable" class="table">
     <thead>
         <tr>
@@ -19,10 +21,19 @@
     </thead>
     <tbody>
         @foreach (var line in Model.Cart.Lines)
-        {
+            {
+            int i = 0;
             <tr>
-                <td class="text-center">@line.Quantity</td>
-                <td class="text-left">@line.Product.Name</td>
+                @using (Html.BeginForm("UpdateCart", "Cart", FormMethod.Post))
+                {
+                    <td>
+                        @Html.Hidden("ProductId", line.Product.ProductID)
+                        <input type="text" name="quantity" class="form-control" value="@line.Quantity" onblur="submit()">
+                    </td>
+
+          
+                }
+                <td class="text-center">@line.Product.Name</td>
                 <td class="text-right">@line.Product.Price.ToString("c")</td>
                 <td class="text-right">
                     @((line.Quantity * line.Product.Price).ToString("c"))
@@ -38,6 +49,7 @@
                 </td>
             </tr>
         }
+
     </tbody>
     <tfoot>
         <tr>
@@ -52,3 +64,11 @@
     <a class="btn btn-primary" href="@Model.ReturnUrl">Continue shopping</a>
     @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "btn btn-primary" })
 </div>
+
+<h3>The quantity change is processed at server end; needs to be checked with inventory max</h3>
+
+<script>
+    function submit(this) {
+        this.parentElement.submit;
+    }
+</script>
