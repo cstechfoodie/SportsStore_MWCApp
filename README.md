@@ -1,4 +1,4 @@
-# SportsStore_MWCApp
+# SportsStore_MWCApp  ///
 A Simple E-commerce Sports Store
 ```
 **Disclaimer: This project is following and extending existing tutorial**
