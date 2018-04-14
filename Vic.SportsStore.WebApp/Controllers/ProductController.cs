@@ -11,6 +11,7 @@ namespace Vic.SportsStore.WebApp.Controllers
 {
     public class ProductController : Controller
     {
+        //test TFS CI
         private IProductRepository repository;
         public int PageSize = 2;
 
