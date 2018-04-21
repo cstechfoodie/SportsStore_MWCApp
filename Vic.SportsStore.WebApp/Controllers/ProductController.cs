@@ -23,6 +23,7 @@ namespace Vic.SportsStore.WebApp.Controllers
         public ViewResult Start()
         {
             return View();
+
         }
 
         public ViewResult List(string category, int page = 1)
